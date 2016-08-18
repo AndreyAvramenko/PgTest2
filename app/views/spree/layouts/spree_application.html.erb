@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="<%= I18n.locale %>">
+  <head data-hook="inside_head">
+    <%= render partial: 'spree/shared/head' %>
+  </head>
+  <body class="flex-column" data-hook="body">
+    <%= render partial: 'spree/shared/google_analytics.js' %>
+    <%= render partial: 'spree/shared/header' %>
+
+<!--
+    <div class="container">
+      <div class="row" data-hook>
+        <%= breadcrumbs(@taxon) %>
+
+        <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
+
+        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+          <%= flash_messages %>
+          
+        </div>
+-->
+        <%= yield %>
+        <%= yield :templates %>
+     
+
+
+
+
+       
+<!--  -->
+  <footer class="flex-row-center">
+            <div class="centered-info flex-wrap">
+
+                <nav id="extra-links-1">
+                    <h5>Купите и изучите</h5>
+                    <a href="#">Ноутбуки, планшеты и компьютеры</a>
+                    <a href="#">Телефоны, MP3</a>
+                    <a href="#">ТВ, Аудио, Видео, Фото, Муз. инстру...</a>
+                    <a href="#">Бытовая техника и интерьер</a>
+                    <a href="#">Активный отдых и туризм</a>
+                    <a href="#">Спортивные товары</a>
+                    <a href="#">Детский мир</a>
+                    <a href="#">Товары для дома</a>
+                    <a href="#">Дача, сад, огород</a>
+                </nav>
+
+                <nav id="extra-links-2">
+                    <h5>&nbsp;</h5>
+                    <a href="#">Инструменты и оборудование</a>
+                    <a href="#">Автотовары</a>
+                    <a href="#">Авиа и ЖД билеты</a>
+                    <a href="#">Одежда, обувь и аксессуары</a>
+                    <a href="#">Алкогольные напитки и кон...</a>
+                    <a href="#">Ювелирные украшения</a>
+                    <a href="#">Косметика и парфюмерия</a>
+                    <a href="#">Торговое оборудование</a>
+                </nav>
+
+                <nav id="extra-links-3">
+                    <h5>Flex</h5>
+                    <a href="#">Варианты оплаты</a>
+                    <a href="#">Состояние заказа</a>
+                    <a href="#">Помощь при покупке</a>
+                </nav>
+
+                <nav id="extra-links-4">
+                    <h5>Для образования</h5>
+                    <a href="#">Apple в образовании</a>
+                    <a href="#">Купите для вуза</a>
+
+                    <h5>Для бизнеса</h5>
+                    <a href="#">iPhone в бизнесе</a>
+                    <a href="#">iPad в бизнесе</a>
+                    <a href="#">Mac в бизнесе</a>
+                </nav>
+
+                <nav id="extra-links-5">
+                    <h5>О компании Flex</h5>
+                    <a href="#">Вакансии</a>
+                    <a href="#">Информация для прессы</a>
+                    <a href="#">Гарантия</a>
+                    <a href="#">События</a>
+                    <a href="#">Юридическая информация</a>
+                    <a href="#">Оптовые продажи</a>
+                    <a href="#">Контакты</a>
+                </nav>
+
+                <div id="footer-extra-info">
+                    Другие варианты оплаты: 050 73 20 222 или <a href="#">посетите магазин в вашем городе</a>
+                </div>
+
+                <div id="footer-copyright">© Flex., 2016 г. Все права защищены.</div>
+
+                <div id="footer-policies">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Условия использования</a>
+                    <a href="#">Продажа и возврат</a>
+                    <a href="#">Карта сайта</a>
+                </div>
+
+            </div>
+        </footer>
+
+        <!-- ========================================================================================================== -->
+
+        <div id="page-blind" class="flex-row-center-center closing-container">
+            <div id="cart-popup">
+                <form class="flex-column" id="cart-popup-form" name="cart-popup-form" method="post">
+
+                    <div class="symbol-close close-button"><div></div></div>
+
+                    <section class="cart">
+                        <h3>
+                            <span class="active-only fa fa-shopping-cart"></span>
+                            <span class="inactive-only">1.&nbsp; </span>
+                            Корзина<span class="inactive-only fa fa-angle-down"></span>
+                        </h3>
+                        <hr>
+                        <div>
+
+                        </div>
+                    </section>
+
+                    <section class="contacts">
+                        <h3>2.&nbsp; Контактные данные<span class="inactive-only fa fa-angle-down"></span></h3>
+                        <hr>
+                        <div>
+
+                        </div>
+                    </section>
+
+                    <section class="delivery-and-payment active">
+                        <h3>3.&nbsp; Доставка и оплата<span class="inactive-only fa fa-angle-down"></span></h3>
+                        <hr>
+                        <div>
+                            <div class="delivery">
+                                <div>Доставка</div>
+                                <div class="switch-btn active">Самовывоз</div>
+                                <div class="switch-btn">Курьер</div>
+                            </div>
+                            <label class="check-radio checked"><span class="box"><i class="fa fa-check-square-o"></i><i class="fa fa-square-o"></i></span>
+                                <input name="radio-delivery" value="newpost" checked="checked" type="radio">
+                                Из «Новой почты»
+                            </label>
+                            <div class="show-on-map-block flex-row">
+                                <div class="dropdown unlabeled-input input-row">
+                                    <input name="newpost-department" type="text">
+                                    <i class="fa fa-angle-down"></i>
+                                    <ul>
+                                        <li data-value="Отделение №1, Горького, 6">Отделение №1, Горького, 6</li>
+                                        <li data-value="Отделение №2">Отделение №2</li>
+                                        <li data-value="Отделение №3">Отделение №3</li>
+                                    </ul>
+                                </div>
+                                <a href="#"><i class="fa fa-map-marker"></i>Показать на карте</a>
+                            </div>   
+                            <label class="check-radio m-b-30"><span class="box"><i class="fa fa-check-square-o"></i><i class="fa fa-square-o"></i></span>
+                                <input name="radio-delivery" value="point" type="radio">
+                                Из точки выдачи
+                            </label>
+                            <div class="show-on-map-block flex-row">
+                                <div class="unlabeled-input flex-column">
+                                    <div class="flex-row-center-center input-row">
+                                        <p>Город</p>
+                                        <div class="dropdown labeled-input">
+                                            <input name="city" type="text">
+                                            <i class="fa fa-angle-down"></i>
+                                            <ul>
+                                                <li data-value="Херсон">Херсон</li>
+                                                <li data-value="Не совсем Херсон">Не совсем Херсон</li>
+                                                <li data-value="Совсем не Херсон">Совсем не Херсон</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row-center-center input-row">
+                                        <p>Адрес</p>
+                                        <input class="labeled-input" name="address" type="text">
+                                    </div>
+                                </div>
+                                <a href="#"><i class="fa fa-map-marker"></i>Показать на карте</a>
+                            </div>
+                            <hr>
+                            <div class="payment flex-row">
+                                <div>Оплата</div>
+                                <div>
+                                    <label class="check-radio checked"><span class="box"><i class="fa fa-check-square-o"></i><i class="fa fa-square-o"></i></span>
+                                        <input name="radio-payment" value="cash" checked="checked" type="radio">
+                                        Наличными
+                                    </label>
+                                    <label class="check-radio"><span class="box"><i class="fa fa-check-square-o"></i><i class="fa fa-square-o"></i></span>
+                                        <input name="radio-payment" value="cashless" type="radio">
+                                        Безналичными
+                                    </label>
+                                    <label class="check-radio"><span class="box"><i class="fa fa-check-square-o"></i><i class="fa fa-square-o"></i></span>
+                                        <input name="radio-payment" value="credit" type="radio">
+                                        Кредит
+                                    </label>
+                                    <label class="check-radio paycard"><span class="box"><i class="fa fa-check-square-o"></i><i class="fa fa-square-o"></i></span>
+                                        <input name="radio-payment" value="paycard" type="radio">
+                                        Visa/MasterCard
+                                    </label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="extra-info m-l-120">
+                                <p><i class="fa fa-bullhorn"></i> Введите фамилию, имя и отчество получателя заказа</p>
+                                <p>Внимание! Получение заказа по паспорту</p>
+                            </div>
+                            <div class="add-comment m-l-120">Добавить комментарий к заказу<i class="fa fa-angle-down"></i></div>
+                        </div>
+                    </section>
+
+                    <div class="buttons-zone">
+                        <button type="button" class="go-on-buying-btn"><span>Продолжить покупки</span></button>
+                        <div class="execute-btn-block flex-row-between-center flex-wrap">
+                            <div>Итого</div>
+                            <div><span>44 559 </span>грн</div>
+                            <button type="button" class="execute-btn green-button"><span>Далее</span></button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- ========================================================================================================== -->
+
+        <script src="assets/vendor.js"></script>
+        <script src="assets/index.js"></script>
+
+    
+
+</body>
+</html>

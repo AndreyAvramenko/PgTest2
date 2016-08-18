@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<title><%= title %></title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%== meta_data_tags %>
+<%= canonical_tag(current_store.url) %>
+<%= favicon_link_tag 'favicon.ico' %>
+<!-- <%= stylesheet_link_tag 'spree/frontend/all', media: 'screen' %> -->
+<%= csrf_meta_tags %>
+<%= javascript_include_tag 'spree/frontend/all' %>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="shortcut icon" href="https://e6d0c601b3d0a1e14094e965cc0f4f6038ff794b-www.googledrive.com/host/0B5KY3cfHqnPuaW13V1hOS0ItckU/images/favicon.ico">
+<link rel="stylesheet" href="assets/vendor.css">
+<link rel="stylesheet" href="assets/main.css">
+<!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
+<![endif]-->
+<%= yield :head %>
